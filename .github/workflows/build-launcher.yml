@@ -1,6 +1,7 @@
 name: Build HMCLauncher
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'HMCLauncher/**'
