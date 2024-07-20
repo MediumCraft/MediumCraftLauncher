@@ -16,7 +16,7 @@ on:
       - '.github/workflows/build-release.yml'
 
 jobs:
-  build:
+  build-executable:
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -30,9 +30,27 @@ jobs:
       - name: Build HMCLauncher
         run: msbuild /p:Configuration=Release /t:Rebuild /verbosity:detailed .\HMCLauncher\
         
-      - name: Copy HMCLauncher to assets
-        run: Copy-Item .\HMCLauncher\Release\MediumCraftLauncher.exe -Destination .\HMCL\src\main\resources\assets\MediumCraftLauncher.exe
+      #- name: Copy HMCLauncher to assets
+      #  run: Copy-Item .\HMCLauncher\Release\MediumCraftLauncher.exe -Destination .\HMCL\src\main\resources\assets\MediumCraftLauncher.exe
 
+      - name: Upload Build Files
+        uses: actions/upload-artifact@v4.3.4
+        with:
+          name: MediumCraftLauncher-Executable
+          path: .\HMCLauncher\Release\MediumCraftLauncher.exe
+  build-java:
+    runs-on: ubuntu-latest
+    needs: build-executable
+    steps:
+      - name: Download Built Executable
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: MediumCraftLauncher-Executable
+          path: .\HMCLauncher\Release\MediumCraftLauncher.exe
+
+      - name: Copy HMCLauncher to assets
+        run: cp .\HMCLauncher\Release\MediumCraftLauncher.exe .\HMCL\src\main\resources\assets\MediumCraftLauncher.exe
+      
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -48,10 +66,10 @@ jobs:
           #CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
           
       - name: Get short SHA
-        run: echo "SHORT_SHA=$("${{ github.sha }}".SubString(0, 7))" >> $env:GITHUB_ENV
+        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $env:GITHUB_ENV
         
       - name: Copy HMCLauncher to libs
-        run: Copy-Item .\HMCLauncher\Release\MediumCraftLauncher.exe -Destination .\HMCL\build\libs\MediumCraftLauncher.exe
+        run: cp .\HMCLauncher\Release\MediumCraftLauncher.exe .\HMCL\build\libs\MediumCraftLauncher.exe
         
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
