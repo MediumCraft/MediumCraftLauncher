@@ -41,7 +41,7 @@ jobs:
           java-package: 'jdk+fx'
           
       - name: Build with Gradle
-        run: .\gradlew build --no-daemon
+        run: .\gradlew clean build --no-daemon
         env:
           MICROSOFT_AUTH_ID: ${{ secrets.MICROSOFT_AUTH_ID }}
           MICROSOFT_AUTH_SECRET: ${{ secrets.MICROSOFT_AUTH_SECRET }}
