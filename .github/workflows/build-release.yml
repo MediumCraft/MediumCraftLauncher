@@ -21,13 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: 17
-          java-package: 'jdk+fx'
       
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
@@ -39,6 +32,13 @@ jobs:
         
       - name: Copy HMCLauncher to assets
         run: Copy-Item .\HMCLauncher\Release\MediumCraftLauncher.exe -Destination .\HMCL\src\main\resources\assets\MediumCraftLauncher.exe
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+          java-package: 'jdk+fx'
           
       - name: Build with Gradle
         run: .\gradlew clean build
