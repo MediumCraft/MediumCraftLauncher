@@ -48,6 +48,12 @@ jobs:
           name: MediumCraftLauncher-Executable
           path: .\HMCLauncher\Release\MediumCraftLauncher.exe
 
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Repository
+          path: .
+
       - name: Copy HMCLauncher to assets
         run: cp ./HMCLauncher/Release/MediumCraftLauncher.exe ./HMCL/src/main/resources/assets/MediumCraftLauncher.exe
       
