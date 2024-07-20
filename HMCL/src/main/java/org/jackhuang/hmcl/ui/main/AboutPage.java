@@ -37,15 +37,20 @@ public class AboutPage extends StackPane {
             launcher.setImage(FXUtils.newBuiltinImage("/assets/img/icon.png"));
             launcher.setTitle("Hello Minecraft! Launcher");
             launcher.setSubtitle(Metadata.VERSION);
-            launcher.setExternalLink("https://hmcl.huangyuhui.net");
+            //launcher.setExternalLink("https://hmcl.huangyuhui.net");
+
+            IconedTwoLineListItem mediumcraft = new IconedTwoLineListItem();
+            //author.setImage(FXUtils.newBuiltinImage("/assets/img/yellow_fish.png"));
+            mediumcraft.setTitle("MediumCraft Development");
+            mediumcraft.setSubtitle("Maintainers of the MediumCraft Development Branch");
 
             IconedTwoLineListItem author = new IconedTwoLineListItem();
             author.setImage(FXUtils.newBuiltinImage("/assets/img/yellow_fish.png"));
             author.setTitle("huanghongxun");
             author.setSubtitle(i18n("about.author.statement"));
-            author.setExternalLink("https://space.bilibili.com/1445341");
+            //author.setExternalLink("https://space.bilibili.com/1445341");
 
-            about.getContent().setAll(launcher, author);
+            about.getContent().setAll(launcher, mediumcraft, author);
         }
 
         ComponentList thanks = new ComponentList();
@@ -54,49 +59,49 @@ public class AboutPage extends StackPane {
             yushijinhun.setImage(FXUtils.newBuiltinImage("/assets/img/yushijinhun.png"));
             yushijinhun.setTitle("yushijinhun");
             yushijinhun.setSubtitle(i18n("about.thanks_to.yushijinhun.statement"));
-            yushijinhun.setExternalLink("https://yushi.moe/");
+            //yushijinhun.setExternalLink("https://yushi.moe/");
 
             IconedTwoLineListItem bangbang93 = new IconedTwoLineListItem();
             bangbang93.setImage(FXUtils.newBuiltinImage("/assets/img/bangbang93.png"));
             bangbang93.setTitle("bangbang93");
             bangbang93.setSubtitle(i18n("about.thanks_to.bangbang93.statement"));
-            bangbang93.setExternalLink("https://bmclapi2.bangbang93.com/");
+            //bangbang93.setExternalLink("https://bmclapi2.bangbang93.com/");
 
             IconedTwoLineListItem glavo = new IconedTwoLineListItem();
             glavo.setImage(FXUtils.newBuiltinImage("/assets/img/glavo.png"));
             glavo.setTitle("Glavo");
             glavo.setSubtitle(i18n("about.thanks_to.glavo.statement"));
-            glavo.setExternalLink("https://github.com/Glavo");
+            //glavo.setExternalLink("https://github.com/Glavo");
 
             IconedTwoLineListItem zekerzhayard = new IconedTwoLineListItem();
             zekerzhayard.setImage(FXUtils.newBuiltinImage("/assets/img/zekerzhayard.png"));
             zekerzhayard.setTitle("ZekerZhayard");
             zekerzhayard.setSubtitle(i18n("about.thanks_to.zekerzhayard.statement"));
-            zekerzhayard.setExternalLink("https://github.com/ZekerZhayard");
+            //zekerzhayard.setExternalLink("https://github.com/ZekerZhayard");
 
             IconedTwoLineListItem zkitefly = new IconedTwoLineListItem();
             zkitefly.setImage(FXUtils.newBuiltinImage("/assets/img/zkitefly.png"));
             zkitefly.setTitle("Zkitefly");
             zkitefly.setSubtitle(i18n("about.thanks_to.zkitefly.statement"));
-            zkitefly.setExternalLink("https://github.com/zkitefly");
+            //zkitefly.setExternalLink("https://github.com/zkitefly");
 
             IconedTwoLineListItem burningtnt = new IconedTwoLineListItem();
             burningtnt.setImage(FXUtils.newBuiltinImage("/assets/img/burningtnt.png"));
             burningtnt.setTitle("Burning_TNT");
             burningtnt.setSubtitle(i18n("about.thanks_to.burningtnt.statement"));
-            burningtnt.setExternalLink("https://github.com/burningtnt");
+            //burningtnt.setExternalLink("https://github.com/burningtnt");
 
             IconedTwoLineListItem shulkerSakura = new IconedTwoLineListItem();
             shulkerSakura.setTitle("ShulkerSakura");
             shulkerSakura.setImage(FXUtils.newBuiltinImage("/assets/img/ShulkerSakura.png"));
             shulkerSakura.setSubtitle(i18n("about.thanks_to.shulkersakura.statement"));
-            shulkerSakura.setExternalLink("https://github.com/ShulkerSakura");
+            //shulkerSakura.setExternalLink("https://github.com/ShulkerSakura");
 
             IconedTwoLineListItem gamerteam = new IconedTwoLineListItem();
             gamerteam.setTitle("gamerteam");
             gamerteam.setImage(FXUtils.newBuiltinImage("/assets/img/gamerteam.png"));
             gamerteam.setSubtitle(i18n("about.thanks_to.gamerteam.statement"));
-            gamerteam.setExternalLink("http://www.zhaisoul.com/");
+            //gamerteam.setExternalLink("http://www.zhaisoul.com/");
 
             IconedTwoLineListItem redLnn = new IconedTwoLineListItem();
             redLnn.setTitle("Red_lnn");
@@ -107,7 +112,7 @@ public class AboutPage extends StackPane {
             mcmod.setImage(FXUtils.newBuiltinImage("/assets/img/mcmod.png"));
             mcmod.setTitle(i18n("about.thanks_to.mcmod"));
             mcmod.setSubtitle(i18n("about.thanks_to.mcmod.statement"));
-            mcmod.setExternalLink("https://www.mcmod.cn/");
+            //mcmod.setExternalLink("https://www.mcmod.cn/");
 
             IconedTwoLineListItem mcbbs = new IconedTwoLineListItem();
             mcbbs.setImage(FXUtils.newBuiltinImage("/assets/img/chest.png"));
@@ -124,7 +129,7 @@ public class AboutPage extends StackPane {
             users.setImage(FXUtils.newBuiltinImage("/assets/img/icon.png"));
             users.setTitle(i18n("about.thanks_to.users"));
             users.setSubtitle(i18n("about.thanks_to.users.statement"));
-            users.setExternalLink("https://docs.hmcl.net/groups.html");
+            //users.setExternalLink("https://docs.hmcl.net/groups.html");
 
             thanks.getContent().setAll(yushijinhun, bangbang93, glavo, zekerzhayard, zkitefly, burningtnt, mcmod, mcbbs, shulkerSakura, gamerteam, redLnn, contributors, users);
         }

@@ -41,11 +41,13 @@ public class FeedbackPage extends SpinnerPane {
 
         ComponentList community = new ComponentList();
         {
+            /*
             IconedTwoLineListItem users = new IconedTwoLineListItem();
             users.setImage(FXUtils.newBuiltinImage("/assets/img/icon.png"));
             users.setTitle(i18n("feedback.qq_group"));
             users.setSubtitle(i18n("feedback.qq_group.statement"));
             users.setExternalLink("https://docs.hmcl.net/groups.html");
+            */
 
             IconedTwoLineListItem github = new IconedTwoLineListItem();
             github.setImage(FXUtils.newBuiltinImage("/assets/img/github.png"));
@@ -53,13 +55,15 @@ public class FeedbackPage extends SpinnerPane {
             github.setSubtitle(i18n("feedback.github.statement"));
             github.setExternalLink("https://github.com/HMCL-dev/HMCL/issues/new/choose");
 
-            IconedTwoLineListItem discord = new IconedTwoLineListItem();
+            /*IconedTwoLineListItem discord = new IconedTwoLineListItem();
             discord.setImage(FXUtils.newBuiltinImage("/assets/img/discord.png"));
             discord.setTitle(i18n("feedback.discord"));
             discord.setSubtitle(i18n("feedback.discord.statement"));
             discord.setExternalLink("https://discord.gg/jVvC7HfM6U");
+            */
 
-            community.getContent().setAll(users, github, discord);
+            //community.getContent().setAll(users, github, discord);
+            community.getContent().setAll(github);
         }
 
         content.getChildren().addAll(
