@@ -4,10 +4,14 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - 'HMCL/**'
+      - 'HMCLCore/**'
       - 'HMCLauncher/**'
       - '.github/workflows/build-release.yml'
   pull_request:
     paths:
+      - 'HMCL/**'
+      - 'HMCLCore/**'
       - 'HMCLauncher/**'
       - '.github/workflows/build-release.yml'
 
