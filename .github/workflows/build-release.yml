@@ -1,15 +1,15 @@
-name: Build HMCLauncher
+name: Build MediumCraft Launcher
 
 on:
   workflow_dispatch:
   push:
     paths:
       - 'HMCLauncher/**'
-      - '.github/workflows/build-launcher.yml'
+      - '.github/workflows/build-release.yml'
   pull_request:
     paths:
       - 'HMCLauncher/**'
-      - '.github/workflows/build-launcher.yml'
+      - '.github/workflows/build-release.yml'
 
 jobs:
   build:
